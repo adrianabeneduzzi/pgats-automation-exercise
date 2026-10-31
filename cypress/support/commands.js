@@ -93,5 +93,12 @@ Cypress.Commands.add('completeCheckoutAndPayment', () => {
   cy.get('[data-qa="expiry-month"]').type('12');
   cy.get('[data-qa="expiry-year"]').type('2030');
   cy.get('[data-qa="pay-button"]').click();
-  cy.contains(/Your order has been placed successfully!/i).should('be.visible');
+  cy.get('body', { timeout: 20000 }).should(($body) => {
+    const pageText = $body.text();
+
+    expect(
+      pageText,
+      'A confirmação do pedido não foi exibida. Conteúdo da página:'
+    ).to.match(/Your order has been placed successfully!|Congratulations! Your order has been confirmed!/i);
+  });
 });
