@@ -1,10 +1,10 @@
-# PGATS - Automacao Web com Cypress
+# PGATS — Automação Web com Cypress
 
-Projeto de conclusao de disciplina usando a aplicacao ficticia [Automation Exercise](https://www.automationexercise.com/).
+Projeto de conclusão de disciplina utilizando a aplicação fictícia [Automation Exercise](https://www.automationexercise.com/).
 
 ## Escopo
 
-Automacao dos casos solicitados: **1, 2, 3, 4, 5, 8, 9, 10, 15 e 16**.
+Automação dos casos de teste solicitados: **1, 2, 3, 4, 5, 8, 9, 10, 15 e 16**.
 
 ## Tecnologias
 
@@ -13,18 +13,18 @@ Automacao dos casos solicitados: **1, 2, 3, 4, 5, 8, 9, 10, 15 e 16**.
 - cypress-mochawesome-reporter
 - GitHub Actions
 
-## Pre-requisitos
+## Pré-requisitos
 
-- Node.js em versao LTS compativel com a versao do Cypress instalada
+- Node.js em versão LTS compatível com a versão do Cypress instalada
 - npm
 
-## Instalar dependencias
+## Instalação das dependências
 
 ```bash
 npm ci
 ```
 
-## Executar os testes
+## Execução dos testes
 
 Abrir o Cypress em modo interativo:
 
@@ -32,25 +32,25 @@ Abrir o Cypress em modo interativo:
 npm run cy:open
 ```
 
-Executar o spec do trabalho em modo headless:
+Executar a especificação do trabalho em modo headless:
 
 ```bash
 npm test
 ```
 
-## Relatorios e evidencias
+## Relatórios e evidências
 
-O reporter Mochawesome esta configurado em `cypress.config.js`. A pipeline do GitHub Actions executa o spec do trabalho e publica os relatorios, screenshots e videos disponiveis como artefato da execucao, mesmo quando os testes falham.
+O reporter Mochawesome está configurado em `cypress.config.js`. A pipeline do GitHub Actions executa a especificação do trabalho e publica os relatórios, as capturas de tela e os vídeos disponíveis como artefatos da execução, inclusive quando ocorrem falhas nos testes.
 
-## Estrutura
+## Estrutura do projeto
 
-- `cypress/e2e/trabalho-final.cy.js`: cenarios automatizados do trabalho
-- `cypress/support/commands.js`: comandos reutilizaveis e fluxos comuns
-- `cypress/support/e2e.js`: configuracao global e registro do reporter
-- `.github/workflows/cypress.yml`: pipeline de CI
+- `cypress/e2e/trabalho-final.cy.js`: cenários automatizados do trabalho.
+- `cypress/support/commands.js`: comandos reutilizáveis e fluxos comuns.
+- `cypress/support/e2e.js`: configurações globais e registro do reporter.
+- `.github/workflows/cypress.yml`: pipeline de CI.
 
-## Observacoes
+## Observações
 
-- Os cenarios que precisam de conta criam usuarios temporarios com e-mails unicos e tentam excluir as contas ao final.
-- O site de pratica e externo; instabilidades, indisponibilidade ou mudancas de seletores podem afetar a execucao.
-- Antes da entrega, execute a pipeline e confirme que todos os dez casos passaram. Nao considere a suite aprovada ate verificar uma execucao real no GitHub Actions.
+- Os cenários que exigem uma conta criam usuários temporários com endereços de e-mail únicos e tentam excluir as contas ao final.
+- O site de prática é externo; instabilidades, indisponibilidade ou alterações nos seletores podem afetar a execução.
+- Antes da entrega, execute a pipeline e confirme que todos os dez casos passaram. Não considere a suíte aprovada até verificar uma execução real no GitHub Actions.
